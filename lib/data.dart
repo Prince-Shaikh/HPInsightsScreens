@@ -6,3 +6,7 @@ List opportunities_data = [
   "How to make your space comfortable for remote workers",
   "The best amenited to offer right now"
 ];
+
+class UserStats{
+  
+}
