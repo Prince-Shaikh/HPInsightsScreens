@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insight_screens/Screens/TransactionScreen.dart';
 import 'package:insight_screens/data.dart';
 
 class OpportunitiesView extends StatelessWidget {
@@ -73,18 +74,27 @@ class StatsView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical:30.0),
+            padding: const EdgeInsets.symmetric(vertical: 30.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
-                      children: [Text("5.0",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),), Icon(Icons.star)],
+                      children: [
+                        Text(
+                          "5.0",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        Icon(Icons.star)
+                      ],
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: 10),
                     Text(
                       "Overall Rating",
                       style: TextStyle(fontSize: 16),
@@ -92,17 +102,119 @@ class StatsView extends StatelessWidget {
                   ],
                 ),
                 Column(
-                  children: [],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "0",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Reviews",
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
                 ),
                 Column(
-                  children: [],
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "N/A",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Response Rate",
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
                 )
               ],
             ),
           ),
           Divider(
             thickness: 2,
-          )
+          ),
+
+          //Second Row
+
+          Padding(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "\$0.00",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "Earning in July",
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "0",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "30-days views",
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "N/A",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      "30-day Bookings",
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => TransactionScreen()));
+            },
+            child: Text("View transaction history"),
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          SizedBox(height: 10,),
+          Text(
+            "Tips",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            "You are all set for now! check back in future for more tips",
+            style: TextStyle(fontSize: 16),
+          ),
         ],
       ),
     );
